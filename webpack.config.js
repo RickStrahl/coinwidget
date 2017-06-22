@@ -8,15 +8,15 @@ module.exports = {
         filename: 'bundle.js'
     },
     plugins: [
-        new UglifyJSPlugin(),
+        new UglifyJSPlugin()/*,
         new webpack.ProvidePlugin({
             jQuery: 'jquery',
                 $: 'jquery',
                 jquery: 'jquery'
-        })
+        })*/
     ],
     module: {
-        rules: [
+        rules: [/*
             {
                 test: require.resolve('jquery'),
                 use: [{
@@ -26,7 +26,7 @@ module.exports = {
                         loader: 'expose-loader',
                         options: '$'
                 }]
-            },
+            },*/
             {
                 test: /\.(jpe?g|png|gif|svg)$/i,
                 use: {
