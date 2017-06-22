@@ -1,0 +1,21 @@
+.wallet-number {
+    font-size: 13px;
+    color: #3a3a3a;
+}
+
+.modal-footer {
+    border-top: 1px solid rgba(34,36,38,.15);
+    text-align: right;
+    padding: 20px;
+    background-color: #f9fafb;
+}
+
+.image-container {
+    text-align: center;
+    margin: 10px auto 20px auto;
+    max-width: 200px;
+}
+
+.image-container img {
+    width: 100%;
+}
