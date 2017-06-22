@@ -1,4 +1,6 @@
 import './style.css';
+import './semantic/dist/semantic.min.css';
+import './semantic/dist/semantic.min.js';
 
 import Button from './components/button.js';
 import Modal from './components/modal.js';

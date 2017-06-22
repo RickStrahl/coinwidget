@@ -1,27 +1,47 @@
+const webpack = require('webpack');
+const UglifyJSPlugin = require('uglifyjs-webpack-plugin');
+
 module.exports = {
     entry: './entry.js',
     output: {
         path: __dirname,
         filename: 'bundle.js'
     },
-    devServer: {
-        contentBase: __dirname,
-        compress: false,
-        port: 9000
-    },
+    plugins: [
+        new UglifyJSPlugin(),
+        new webpack.ProvidePlugin({
+            jQuery: 'jquery',
+                $: 'jquery',
+                jquery: 'jquery'
+        })
+    ],
     module: {
         rules: [
             {
+                test: require.resolve('jquery'),
+                use: [{
+                        loader: 'expose-loader',
+                        options: 'jQuery'
+                    },{
+                        loader: 'expose-loader',
+                        options: '$'
+                }]
+            },
+            {
                 test: /\.(jpe?g|png|gif|svg)$/i,
-                use: [
-                    {
-                        loader: 'url-loader'
-                    }
-                ]
+                use: {
+                    loader: 'url-loader'
+                }
+            },
+            {
+                test: /\.(eot|svg|ttf|woff|woff2)$/,
+                use: {
+                    loader: 'url-loader'
+                }
             },
             {
                 test: /\.js$/,
-                exclude: /(node_modules|bower_components)/,
+                exclude: /(node_modules|bower_components|semantic)/,
                 use: {
                     loader: 'babel-loader',
                     options: {
@@ -36,7 +56,10 @@ module.exports = {
                         loader: 'style-loader'
                     },
                     {
-                        loader: 'css-loader'
+                        loader: 'css-loader',
+                        options: {
+                            minimize: true
+                        }
                     }
                 ]
             },

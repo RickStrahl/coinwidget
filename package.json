@@ -1,11 +1,12 @@
 {
   "name": "coinwidget",
   "version": "1.0.0",
-  "description": "Widget generator for bitcoin transactions",
+  "description": "Widget generator for bitcoin donation",
   "main": "entry.js",
   "dependencies": {
     "gulp": "^3.9.1",
     "handlebars": "^4.0.10",
+    "jquery": "^3.2.1",
     "rand-token": "^0.3.0",
     "semantic-ui": "^2.2.10",
     "webpack": "^3.0.0",
@@ -16,10 +17,12 @@
     "babel-loader": "^7.1.0",
     "babel-preset-env": "^1.5.2",
     "css-loader": "^0.28.4",
+    "expose-loader": "^0.7.3",
     "fill-range": "^4.0.0",
     "handlebars": "^4.0.10",
     "handlebars-loader": "^1.5.0",
     "image-webpack-loader": "^3.3.1",
+    "uglifyjs-webpack-plugin": "^0.4.6",
     "url-loader": "^0.5.9"
   },
   "scripts": {
