@@ -12,6 +12,14 @@ module.exports = {
     module: {
         rules: [
             {
+                test: /\.(jpe?g|png|gif|svg)$/i,
+                use: [
+                    {
+                        loader: 'url-loader'
+                    }
+                ]
+            },
+            {
                 test: /\.js$/,
                 exclude: /(node_modules|bower_components)/,
                 use: {
